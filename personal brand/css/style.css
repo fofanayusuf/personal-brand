@@ -1,0 +1,592 @@
+/* ===== Global ===== */
+* {margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif;}
+body {background:#000; color:#fff; line-height:1.6; font-size:16px;}
+h1,h2{margin-bottom:1rem;}
+p{color:#ccc;}
+
+
+/*logo*/
+/* ===== Logo Styling ===== */
+.logo img {
+  height: 50px;              /* Adjust logo size */
+  width: auto;               /* Keep proportions */
+  display: block;            /* Remove inline gaps */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;       /* Center logo + nav vertically */
+  padding: 15px 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;                 /* Space between links */
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+  position: relative;
+}
+
+.logo-img {
+  width: 120px;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f39c12; /* optional hover effect */
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none; /* hide on desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    display: none; /* hidden by default */
+    gap: 15px;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hamburger animation when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+.nav-links li a:hover {
+  color: #00ffcc;            /* Highlight effect on hover */
+}
+
+/* ===== Navbar ===== */
+.navbar {display:flex; justify-content:space-between; align-items:center; background:#111; padding:1rem 2rem; position:sticky; top:0; z-index:100;}
+.navbar h2{font-size:1.5rem; font-weight:bold;}
+.nav-links{list-style:none; display:flex; gap:1.5rem;}
+.nav-links a{color:#fff; text-decoration:none;}
+.nav-links a:hover{color:#aaa;}
+
+/* Hamburger */
+.hamburger{display:none; flex-direction:column; justify-content:space-between; width:25px; height:20px; cursor:pointer;}
+.hamburger span{display:block; height:3px; width:100%; background:#fff; border-radius:3px; transition:all 0.3s ease;}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+@media(max-width:768px){
+  .nav-links{display:flex; flex-direction:column; background:#111; position:absolute; top:60px; right:-300px; width:200px; padding:1rem; border-radius:8px; transition:right 0.3s ease;}
+  .nav-links.show{right:20px;}
+  .hamburger{display:flex;}
+}
+
+/* ===== Hero ===== */
+header{text-align:center; padding:4rem 1rem;}
+header h1{font-size:3rem;}
+header p{font-size:1.2rem; max-width:700px; margin:0 auto 2rem;}
+header .cta{padding:.8rem 1.5rem; font-size:1rem; border:none; background:#fff; color:#000; cursor:pointer; border-radius:6px;}
+
+/* Sections */
+section{max-width:800px; margin:4rem auto; padding:0 1rem;}
+section h2{font-size:2rem; margin-bottom:1rem;}
+
+/* Grid Cards */
+.blog-grid, .learning-grid, .ai-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:2rem; text-align:center;}
+.blog-card, .learning-card, .ai-card{background:#3a3a3a; padding:2rem; border-radius:12px; transition:all 0.2s ease;}
+.blog-card:hover, .learning-card:hover, .ai-card:hover{transform:translateY(-5px); background:#1a1a1a;}
+.blog-card h3, .learning-card h3, .ai-card h3{margin-bottom:.5rem;color:#fff;}
+.blog-card p, .learning-card p, .ai-card p{color:#bbb; margin-bottom:1rem; font-size:.95rem;}
+.blog-card a, .ai-card a{color:#fff; font-weight:bold; text-decoration:none;}
+.blog-card a:hover, .ai-card a:hover{text-decoration:underline;}
+@media(max-width:768px){.blog-grid, .learning-grid, .ai-grid{grid-template-columns:1fr;}}
+
+/* Learning Grid */
+.learning-card{background:#4d4d4d;}
+.learning-card p{color:#aaa;}
+
+/* About */
+.about{display:flex; align-items:center; gap:2rem; flex-wrap:wrap;}
+.about img{width:180px; height:180px; border-radius:50%; object-fit:cover; border:3px solid #fff;}
+
+/* Subscribe & Footer Form */
+.subscribe input, .subscribe button, .footer-right input, .footer-right textarea, .footer-right button {border-radius:6px; padding:.6rem; margin-bottom:.5rem;}
+.subscribe input, .footer-right input, .footer-right textarea {background:#000; color:#fff; border-top:1px solid #fff;}
+.subscribe button, .footer-right button {background:#fff; color:#000; border:none; cursor:pointer;}
+
+/* Footer */
+footer{background:#111; padding:3rem 1rem; color:#eee;}
+.footer-container{display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:1000px; margin:auto;}
+.footer-left h2,.footer-right h2{margin-bottom:1rem;color:#fff;}
+.footer-right form input,.footer-right form textarea{width:100%; padding:.7rem; margin-bottom:1rem; border:none; border-radius:6px; resize:none; background:#000; color:#fff; border-top:1px solid #fff;}
+.footer-right form textarea{height:100px;}
+.footer-right form button{padding:.7rem 1.5rem; border:none; border-radius:6px; background:#fff; color:#000; cursor:pointer;}
+.social-links{list-style:none; padding:0;}
+.social-links li{margin-bottom:.5rem;}
+.social-links a{color:#eee; text-decoration:none;}
+.social-links a:hover{color:#ccc;}
+.footer-bottom{text-align:center; margin-top:2rem; color:#aaa; font-size:.9rem;}
+@media(max-width:768px){.footer-container{grid-template-columns:1fr; text-align:center;}}
+
+/* Floating Socials */
+.floating-socials {position: fixed; bottom:20px; right:10px; display:flex; flex-direction:column; gap:.5rem; z-index:1000;}
+.floating-socials .social-btn {display:flex; justify-content:center; align-items:center; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; text-decoration:none; font-size:1.2rem; box-shadow:0 0 5px #fff;}
+@media(min-width:769px){.floating-socials{display:none;}}
+
+.lesson p {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+
+.lesson h1, .lesson h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.lesson blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #222;
+  border-left: 4px solid #00f5d4;
+  font-style: italic;
+}
+
+.lesson p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.lesson h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.lesson ul, .lesson ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.lesson blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #222;
+  border-left: 4px solid #00f5d4;
+  font-style: italic;
+}
+
+ .link-btn {
+  display: block;              /* makes the button full row */
+  margin: 0.8rem auto 0 auto;  /* centers it horizontally */
+  padding: 8px 16px;
+  background: #3a3a3a;         /* graphite gray */
+  color: #fff;
+  text-align: center;          /* centers the text inside */
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  width: fit-content;          /* button only as wide as text */
+  transition: background 0.3s ease;
+}
+
+.link-btn:hover {
+  background: #555; /* lighter gray on hover */
+}
+.book-cover {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animation effect */
+.book-cover:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Already existing button styling */
+.link-btn {
+  display: block;
+  margin: 0.8rem auto 0 auto;
+  padding: 8px 16px;
+  background: #3a3a3a;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+
+.link-btn:hover {
+  background: #555;
+}
+/* Book cards with background image */
+.book-card {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Make book cards responsive */
+@media (max-width: 768px) {
+  .book-card {
+    height: 220px;           /* smaller height on mobile */
+    display: flex;
+    align-items: flex-end;   /* keep text at bottom */
+  }
+
+  .book-overlay {
+    padding: 0.6rem;         /* less padding for small screens */
+    font-size: 14px;         /* smaller text */
+  }
+
+  .link-btn {
+    padding: 6px 12px;       /* smaller button */
+    font-size: 13px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .book-card {
+    height: 180px;
+  }
+
+  .book-overlay h3 {
+    font-size: 16px;
+  }
+
+  .book-overlay p {
+    font-size: 12px;
+  }
+}
+
+
+/* Overlay for text */
+.book-overlay {
+  background: rgba(0, 0, 0, 0.55); /* dark overlay for readability */
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Hover effect */
+.book-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Staggered animation */
+.learning-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.learning-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.learning-card:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+/* Fade-in keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.link-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 8px 16px;
+  background: #3a3a3a;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.link-btn:hover {
+  background: #555;
+}
+
+
+/* Staggered delays */
+.learning-card:nth-child(1) .book-cover {
+  animation-delay: 0.2s;
+}
+.learning-card:nth-child(2) .book-cover {
+  animation-delay: 0.5s;
+}
+.learning-card:nth-child(3) .book-cover {
+  animation-delay: 0.8s;
+}
+
+/* Hover effect */
+.book-cover:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Fade-in + slide-up keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.link-btn {
+  display: block;
+  margin: 0.8rem auto 0 auto;
+  padding: 8px 16px;
+  background: #3a3a3a;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+
+.link-btn:hover {
+  background: #555;
+}
+:root {
+  --card-bg: #2a2a2a;      /* dark gray card background */
+  --card-text: #fff;       /* text color */
+  --btn-bg: #3a3a3a;       /* button color */
+  --btn-hover: #555;       /* button hover color */
+  --overlay-bg: rgba(0, 0, 0, 0.55); /* for book overlay */
+}
+
+/* Creator cards, AI cards, Blog cards */
+.learning-card {
+  background: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learning-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Buttons */
+.link-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 8px 16px;
+  background: var(--btn-bg);
+  color: var(--card-text);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.link-btn:hover {
+  background: var(--btn-hover);
+}
+
+/* Book overlay uses consistent colors too */
+.book-overlay {
+  background: var(--overlay-bg);
+  color: var(--card-text);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  z-index: 1000;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background: #ddd;
+}
+.book-card {
+  background-color: #1a1a1a; /* dark grey background */
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.book-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.book-card p {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.book-card .link-btn {
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+
+
+.dan-koe-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #fff; /* white border */
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dan-koe-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+.dan-koe-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #fff; /* white border */
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dan-koe-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}

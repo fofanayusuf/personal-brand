@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Internet Is The New Rich</title>
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <a href="/Html/final.html">
+      <img src="/images/logo.png" alt="yfofana logo" class="logo-img">
+    </a>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/Html/final.html">Home</a></li>
+    <li><a href="/Html/blog.html">Blog 1</a></li>
+    <li><a href="/Html/blog2.html">Blog 2</a></li>
+    <li><a href="/Html/blog3.html">Blog 3</a></li>
+  </ul>
+</nav>
+
+  <!-- Blog Article -->
+ <article class="blog-article">
+  <header>
+    <h1>Leverage Is Freedom</h1>
+    <p class="meta">Written by Yusuf Admirable Fofana • August 2025</p>
+  </header>
+
+  <section>
+    <h2>The Pain Point</h2>
+    <p>You work hard. You grind. You learn. You hustle. Yet your life barely moves forward.</p>
+    <p>You trade hours for dollars. Weeks blur together. You sense a bigger life, but it feels distant, unreachable.</p>
+    <p>The problem isn’t effort. The problem is leverage. Leverage is the difference between the life you have and the life you truly want.</p>
+
+    <blockquote class="highlighted-example">
+      <p>“Leverage is the secret to doing less and achieving more. Without it, effort is wasted.” – Dan Koe</p>
+    </blockquote>
+
+    <h2>Reflection</h2>
+    <p>Every hour you work directly limits your income. You are trapped in your schedule. The clock dictates your freedom.</p>
+    <p>The internet flips this rule upside down. Suddenly, one skill, one idea, one creation can reach thousands, even millions.</p>
+
+    <blockquote class="highlighted-example">
+      <p>“Code once. Sell many times. Write once. Impact hundreds. Teach once. Empower thousands.” – Dan Koe</p>
+    </blockquote>
+
+    <p>Leverage isn’t about working harder. It’s about multiplying your impact.</p>
+    <p>One action, magnified. One skill, amplified. That is freedom.</p>
+
+    <h2>The Solution</h2>
+    <ul class="highlighted-prompts">
+      <li><strong>Learn a Skill That Scales:</strong> Focus on digital skills — coding, design, writing, video, social media. Master one. The more valuable your skill, the more leverage you generate.</li>
+      <li><strong>Create Once, Share Many Times:</strong> Blogs, YouTube, newsletters, social posts. Each creation is a lever — it works for you long after you finish it.</li>
+      <li><strong>Build Digital Assets:</strong> Courses, products, services, audiences. Assets produce returns without trading hours for money.</li>
+      <li><strong>Repeat & Optimize:</strong> Experiment constantly. Track what works. Double down on results. Small wins compound into exponential impact.</li>
+    </ul>
+
+    <h2>Takeaway</h2>
+    <p>The secret isn’t harder work. It’s smarter work.</p>
+    <p>Curiosity drives learning. Creativity drives sharing. Leverage drives freedom.</p>
+    
+    <blockquote class="highlighted-example">
+      <p>“Freedom is built, not granted. Your creations are the keys.” – Dan Koe</p>
+    </blockquote>
+
+    <p>Start small. Apply one skill online. Share your first piece of work. Let it multiply.</p>
+    <p>Because leverage isn’t just power—it’s freedom.</p>
+  </section>
+  <footer>
+    <a href="/Html/final.html" class="back-link">← Back to Home</a>
+  </footer>
+</article>
+  </article>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2>Contact Me</h2>
+        <ul class="social-links">
+          <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="web.facebook.com/yusufadmirable.fofana" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+          <li><a href="https://wa.me/YourNumber" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <h2>Subscribe to My Newsletter</h2>
+        <p>Get the latest blog updates straight to your inbox.</p>
+        <form onsubmit="return subscribe(event)">
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Yusuf Admirable Fofana. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="blog.js"></script>
+</body>
+<script>
+  // Hamburger toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  hamburger.classList.toggle('active');
+});
+
+// Newsletter subscription
+function subscribe(event) {
+  event.preventDefault();
+  const email = document.getElementById("email").value;
+  if(email) {
+    alert(`Thanks for subscribing, ${email}!`);
+    document.getElementById("email").value = "";
+  }
+  return false;
+}
+
+</script>
+</html>
+

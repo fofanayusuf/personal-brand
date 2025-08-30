@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curiosity Is Currency</title>
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <a href="/Html/final.html">
+      <img src="/images/logo.png" alt="yfofana logo" class="logo-img">
+    </a>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/Html/final.html">Home</a></li>
+    <li><a href="/Html/blog.html">Blog 1</a></li>
+    <li><a href="/Html/blog2.html">Blog 2</a></li>
+    <li><a href="/Html/blog3.html">Blog 3</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Blog Article -->
+  <article class="blog-article">
+    <header>
+      <h1>Curiosity Is Currency</h1>
+      <p class="meta">Written by Yusuf Admirable Fofana • August 2025</p>
+    </header>
+
+    <section>
+      <p>We live in an age where curiosity matters more than credentials.</p>
+      <p>Most people chase stability: degrees, promotions, a 9–5 that barely excites them.</p>
+      <p>But the world is shifting. Attention, ideas, and curiosity are the real currency.</p>
+
+      <blockquote class="highlighted-example">
+        <p>“Curiosity is the ultimate multiplier. The more you explore, the more leverage you create.” – Dan Koe</p>
+      </blockquote>
+
+      <h2>The Pain Point</h2>
+      <p>You feel stuck in a loop: work → bills → repeat.</p>
+      <p>You see others creating online businesses and wonder: “Why can’t I do that?”</p>
+      <p>Copying someone else’s path often leads to frustration. True growth comes from your own exploration.</p>
+
+      <blockquote class="highlighted-example">
+        <p>“Don’t chase what others are doing. Chase what fascinates you.” – Naval Ravikant</p>
+      </blockquote>
+
+      <h2>The Solution</h2>
+      <ul class="highlighted-prompts">
+        <li><strong>Learn voraciously:</strong> Study design, coding, writing, and content creation—anything that sparks your curiosity. Knowledge compounds.</li>
+        <li><strong>Experiment constantly:</strong> Launch a blog, share insights, or try new projects. Each small experiment is a micro-investment in your growth.</li>
+        <li><strong>Network with curious people:</strong> Surround yourself with others exploring, creating, and questioning. Ideas grow faster in fertile soil.</li>
+        <li><strong>Share your journey:</strong> Every post, video, or thread is leverage. It builds influence, teaches others, and refines your own understanding.</li>
+      </ul>
+
+      <h2>Why It Works</h2>
+      <p>Curiosity compounds faster than money. It creates opportunities, uncovers markets, and builds leverage that the 9–5 world can’t touch.</p>
+
+      <blockquote class="highlighted-example">
+        <p>“The more you learn, the more you earn. But more importantly, the more freedom you create.” – Dan Koe</p>
+      </blockquote>
+
+      <p>Curiosity is rare. Those willing to explore, experiment, and share build influence and freedom online.</p>
+      <p>Start small. Ask questions. Experiment. Document your journey. Let your curiosity work as currency in the digital world.</p>
+
+    </section>
+     <footer>
+    <a href="/Html/final.html" class="back-link">← Back to Home</a>
+  </footer>
+    </article>
+
+    <footer>
+
+      <div class="footer-container">
+        <!-- Contact -->
+        <div class="footer-left">
+          <h2>Contact Me</h2>
+          <ul>
+            <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="web.facebook.com/yusufadmirable.fofana" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://wa.me/YourNumber" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-right">
+          <p>Get the latest blog updates straight to your inbox</p>
+          <form onsubmit="return subscribe(event)">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Yusuf Admirable Fofana. All rights reserved.</p>
+      </div>
+    </footer>
+
+  <script src="/js/blog.js"></script>
+  <script>
+    // Hamburger toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+
+    // Newsletter subscribe
+    function subscribe(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      if(email){
+        alert(`Thanks for subscribing, ${email}!`);
+        document.getElementById("email").value = "";
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* ===== Global Styles ===== */
+* {margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif;}
+body {background:#000; color:#fff; line-height:1.6; font-size:16px;}
+
+
+/*logo
+/* Logo */
+.logo img {
+  height: 45px;  /* adjust logo size */
+  width: auto;
+  display: block;
+}
+
+/* ===== Navbar ===== */
+.navbar {display:flex; justify-content:space-between; align-items:center; background:#111; padding:15px 20px; position:sticky; top:0; z-index:1000;}
+.logo {font-size:1.5rem; font-weight:bold; color:#fff;}
+.nav-links {list-style:none; display:flex; gap:20px;}
+.nav-links li a {text-decoration:none; color:#fff; font-weight:500; transition:0.3s;}
+.nav-links li a:hover {color:#ccc;}
+.hamburger {display:none; flex-direction:column; cursor:pointer;}
+.hamburger span {height:3px; width:25px; background:#fff; margin:4px; border-radius:5px;}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+@media(max-width:768px){
+  .nav-links {display:none; flex-direction:column; background:#111; position:absolute; top:60px; right:0; width:200px; padding:15px;}
+  .nav-links.show {display:flex;}
+  .hamburger{display:flex;}
+}
+
+/* ===== Blog Article ===== */
+.blog-article {max-width:800px; margin:80px auto 60px; padding:20px;}
+.blog-article h1 {font-size:2.5rem; margin-bottom:15px; color:#fff;}
+.blog-article .meta {font-size:0.9rem; color:#aaa; margin-bottom:20px;}
+.blog-article h2 {font-size:1.5rem; margin:20px 0 10px; color:#fff;}
+.blog-article p, .blog-article li {margin-bottom:15px; color:#ddd;}
+.blog-article ul {margin-left:20px;}
+.back-link {display:inline-block; margin-top:20px; color:#fff; text-decoration:none; border-bottom:1px solid #fff; transition:0.3s;}
+.back-link:hover {color:#aaa; border-bottom-color:#aaa;}
+
+/* ===== Footer ===== */
+.footer-container {display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; max-width:1000px; margin:auto; padding:40px 20px; background:#111; border-top:1px solid #333; gap:2rem; color:#fff;}
+.footer-left h2, .footer-right h2 {margin-bottom:10px; font-size:1.2rem;}
+.footer-left ul {list-style:none; padding:0;}
+.footer-left ul li {margin-bottom:8px;}
+.footer-left ul li a {color:#fff; text-decoration:none; transition:0.3s;}
+.footer-left ul li a:hover {color:#aaa;}
+.footer-right p {margin-bottom:10px; color:#aaa; font-size:0.95rem;}
+.footer-right input, .footer-right button {width:100%; padding:10px; margin-bottom:10px; border-radius:6px; font-size:1rem; border:none;}
+.footer-right input {background:#000; color:#fff; border-top:1px solid #fff;}
+.footer-right button {background:#fff; color:#000; cursor:pointer; transition:0.3s;}
+.footer-right button:hover {background:#ccc;}
+.footer-bottom {text-align:center; margin-top:20px; font-size:0.9rem; color:#aaa;}
+@media (max-width:768px){
+  .footer-container {flex-direction:column; align-items:center; text-align:center;}
+  .footer-left, .footer-right {width:100%;}
+  .footer-right input, .footer-right button {max-width:400px; margin:0 auto 10px;}
+}
+
+/* Highlighted quote blocks */
+.highlighted-example {
+  border-left: 4px solid #00f5d4;
+  background: #0a192f;
+  color: #fff;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Highlighted lists like steps or prompts */
+.highlighted-prompts li {
+  background: #0a192f;
+  color: #00f5d4;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  list-style-position: inside;
+  font-weight: 500;
+}
+
