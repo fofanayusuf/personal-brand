@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Top 20 Books — yfofana</title>
+  <meta
+    name="description"
+    content="My top 20 books for inner peace, creativity, discipline, and clarity."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/personal brand/css/style.css" />
+</head>
+
+<body>
+  <header class="topbar" aria-label="Site navigation">
+    <div class="container topbar__inner">
+      <a class="brand" href="/personal brand/Html/final.html" aria-label="Home">
+        <span class="brand__mark brand__mark--word">yfofana</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="./books.html" aria-current="page">Read my top 20 books</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="books-page" aria-label="Top 20 books">
+    <div class="container books-page__inner">
+      <!-- “Photo/cover” recreated to match your brand (no image needed) -->
+      <div class="book-cover" aria-hidden="true">
+        <div class="book-cover__top">
+          <div class="book-cover__eyebrow">YFOFANA</div>
+          <div class="book-cover__title">
+            INNER WORLD<br />
+            READING LIST
+          </div>
+        </div>
+        <div class="book-cover__bottom">
+          <div class="book-cover__bottomText">
+            TOP 20 BOOKS FOR<br />
+            CLARITY & INNER PEACE
+          </div>
+        </div>
+      </div>
+
+      <h1 class="books-page__headline">My top 20 books that changed my inner world.</h1>
+      <p class="books-page__subhead">Where should I send it?</p>
+
+      <form class="books-form" id="booksForm" novalidate>
+        <label class="sr-only" for="name">Name</label>
+        <input class="input books-form__input" id="name" name="name" type="text" placeholder="Your name" required />
+
+        <label class="sr-only" for="email">Email</label>
+        <input class="input books-form__input" id="email" name="email" type="email" placeholder="you@example.com" required />
+
+        <label class="books-consent">
+          <input class="books-consent__box" type="checkbox" id="consent" required />
+          <span>I consent to being added to yfofana’s mailing list</span>
+        </label>
+
+        <button class="btn btn--primary books-form__btn" type="submit">
+          Get the FREE Top 20 Books
+        </button>
+
+        <p class="books-form__hint" id="booksHint" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const form = document.getElementById("booksForm");
+      const hint = document.getElementById("booksHint");
+
+      const isValidEmail = (email) =>
+        /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/i.test(String(email || "").trim());
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        hint.textContent = "";
+
+        const data = new FormData(form);
+        const name = (data.get("name") || "").toString().trim();
+        const email = (data.get("email") || "").toString().trim();
+        const consent = document.getElementById("consent").checked;
+
+        if (!name) return (hint.textContent = "❗ Please enter your name.");
+        if (!isValidEmail(email)) return (hint.textContent = "❗ Please enter a valid email.");
+        if (!consent) return (hint.textContent = "❗ Please check the consent box.");
+
+        // ✅ Replace this with your real integration (Substack/Beehiiv/Mailchimp/etc.)
+        hint.textContent = "✔️ Sent! Check your inbox in a minute.";
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
