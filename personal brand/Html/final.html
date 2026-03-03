@@ -1,247 +1,337 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The New Rich</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The New Rich Is Online</title>
+  <meta name="description" content="People everywhere are learning skills, showing their work on the internet, and building lives on their own terms. You can be one of them." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/personal brand/css/style.css" />
 </head>
 <body>
+  <header class="topbar" aria-label="Site navigation">
+    <div class="container topbar__inner">
+      <a class="brand" href="#" aria-label="Home">
+        <span class="brand__mark">yfofana</span>
+      </a>
 
-  <!-- Navigation -->
-<nav class="navbar">
-  <a href="#home" class="logo">
-    <img src="/images/logo.png" alt="yfofana logo" style="height: 50px;">
-  </a>
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#resources">AI Resources</a></li>
-    <li><a href="#subscribe">Subscribe</a></li>
-    <li><a href="#footer">Contact</a></li>
-  </ul>
-</nav>
-
-
-  <!-- Hero -->
-  <header id="home">
-    <h1>The New Rich Is Online</h1>
-    <p>People everywhere are learning skills, showing their work on the internet, and building lives on their own terms. You can be one of them.</p>
-    <button class="cta" onclick="scrollToSubscribe()">Join My Newsletter</button>
+      <nav class="nav">
+        <a class="nav__link" href="#letters">Read The Letters</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Curiosity Section -->
-  <section>
-    <h2>Curiosity First</h2>
-    <p>I’m not here to call myself a coach. I’m just <strong>Yusuf Admirable Fofana</strong> — someone curious enough to learn and share the process. The internet is the greatest classroom in history. Whether it’s writing, design, coding, or building an audience, digital skills are the new leverage. You don’t need permission. You just need curiosity.</p>
-  </section>
+  <main class="hero" id="top">
+    <div class="container hero__inner">
+      <p class="hero__kicker">THE NEW RICH</p>
 
-  <!-- Blog Section -->
-  <section id="blog">
-    <h2>Blog</h2>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <h3>The Internet Is The New Rich</h3>
-        <p>Money no longer comes from job titles. It comes from Wi-Fi, curiosity, and skills shared online.</p>
-        <a href="/Html/blog.html" class="read-more">Read More →</a>
-      </div>
-      <div class="blog-card">
-        <h3>Leverage Is Freedom</h3>
-        <p>You don’t get rich by working harder. You get rich by multiplying effort through the internet.</p>
-        <a href="/Html/blog2.html" class="read-more">Read More →</a>
-      </div>
-      <div class="blog-card">
-        <h3>Curiosity Is Currency</h3>
-        <p>Curiosity builds wealth in the digital age. Each skill is an asset, each idea a seed.</p>
-        <a href="/Html/blog3.html" class="read-more">Read More →</a>
-      </div>
-    </div>
-  </section>
+      <h1 class="hero__title">
+        The New Rich Is Online
+      </h1>
 
-  <!-- AI Resources Section -->
-  <section id="resources">
-    <h2>Free AI Resources</h2>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <h3>ChatGPT</h3>
-        <p>A free AI tool to help with learning, creativity, and productivity online.</p>
-        <a href="/Html/ai1.html" class="read-more">Read full post →</a>
-      </div>
-      <div class="blog-card">
-        <h3>ChatGPT + Website</h3>
-        <p>An AI tool designed for productivity and learning. Free access to powerful features for creators.</p>
-        <a href="/Html/ai2.html" class="read-more">Read full post →</a>
-      </div>
-      <div class="blog-card">
-        <h3>ChatGPT + App</h3>
-        <p>How to Build a Beginner-Friendly AI App.</p>
-        <a href="/Html/ai3.html" class="read-more">Read full post →</a>
-      </div>
-    </div>
-  </section>
+      <p class="hero__subtitle">
+        People everywhere are learning skills, showing their work on the internet,
+        and building lives on their own terms. You can be one of them.
+      </p>
 
-  <section id="learning">
-  <h2>What I'm Learning</h2>
-  <div class="learning-grid">
-    <div class="learning-card book-card" style="padding: 2rem; text-align: center;">
-      <h3>Atomic Habits</h3>
-      <p>James Clear</p>
-      <a href="https://www.audible.com/pd/Atomic-Habits-Audiobook/1524779261" target="_blank" class="dan-koe-btn">Study More</a>
+      <div class="hero__cta">
+        <a class="btn" href="#subscribe" aria-label="Join my newsletter">
+          Join My Newsletter
+        </a>
+
+        <div class="hero__meta" aria-label="Newsletter frequency">
+          <span class="meta__icon" aria-hidden="true">
+            <!-- small link/chain icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M10.5 13.5l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8.2 15.8l-1.4 1.4a4 4 0 01-5.7-5.7l1.4-1.4a4 4 0 015.7 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M15.8 8.2l1.4-1.4a4 4 0 015.7 5.7l-1.4 1.4a4 4 0 01-5.7 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>Receive 2 free letters a week</span>
+        </div>
+      </div>
     </div>
-    <div class="learning-card book-card" style="padding: 2rem; text-align: center;">
-      <h3>The Almanack of Naval Ravikant</h3>
-      <p>Eric Jorgenson</p>
-      <a href="https://www.audible.com/pd/The-Almanack-of-Naval-Ravikant-Audiobook/B08F2ZV2LQ" target="_blank" class="dan-koe-btn">Study More</a>
-    </div>
-    <div class="learning-card book-card" style="padding: 2rem; text-align: center;">
-      <h3>Deep Work</h3>
-      <p>Cal Newport</p>
-      <a href="https://www.audible.com/pd/Deep-Work-Audiobook/B0189PVAWY" target="_blank" class="dan-koe-btn">Study More</a>
-    </div>
+  </main>
+  <section class="new-creative" id="book-a-call" aria-label="Join the new creative">
+  <div class="container new-creative__inner">
+    <p class="new-creative__kicker">C R E A T I V E</p>
+
+    <h2 class="new-creative__title">Join The New Creative</h2>
+
+    <p class="new-creative__subtitle">
+      Become future-proof with the right skills, systems, and strategy.
+    </p>
+
+    <a class="btn btn--primary new-creative__btn" href="https://cal.com/your-handle" target="_blank" rel="noopener">
+      Book a Call
+    </a>
   </div>
+</section>
 
-  <h2 style="margin-top:3rem;">Creators I'm Studying</h2>
-  <div class="learning-grid">
-    <div class="learning-card">
-      <img src="/images/Dan Koe.png" alt="Dan Koe" style="width:100%; height:200px; object-fit:cover; border-radius:12px;">
-      <h3>Dan Koe</h3>
-      <p>Digital creator on business, leverage & mindset</p>
-      <a href="https://www.youtube.com/@thedankoe" target="_blank" class="link-btn dan-koe-btn">Watch More</a>
-    </div>
-    <div class="learning-card">
-      <img src="/images/Ali.png" alt="Ali Abdaal" style="width:100%; height:200px; object-fit:cover; border-radius:12px;">
-      <h3>Ali Abdaal</h3>
-      <p>Productivity & learning strategies</p>
-      <a href="https://www.youtube.com/@aliabdaal" target="_blank" class="link-btn dan-koe-btn">Watch More</a>
-    </div>
-    <div class="learning-card">
-      <img src="/images/Naval.png" alt="Naval Ravikant" style="width:100%; height:200px; object-fit:cover; border-radius:12px;">
-      <h3>Naval Ravikant</h3>
-      <p>Philosophy, startups & wealth creation</p>
-      <a href="https://nav.al/" target="_blank" class="link-btn dan-koe-btn">Watch More</a>
+<section class="stay-ahead" id="stay-ahead" aria-label="Stay Ahead resources">
+  <div class="container stay-ahead__inner">
+    <p class="stay-ahead__kicker">R E S O U R C E S</p>
+    <h2 class="stay-ahead__title">Stay Ahead</h2>
+    <p class="stay-ahead__subtitle">AI notes, systems, and tools so you don’t fall behind.</p>
+
+    <div class="stay-ahead__grid">
+      <!-- LEFT CARD -->
+      <article class="sa-card sa-card--primary">
+        <div class="sa-badge" aria-hidden="true">STAY/AHEAD</div>
+
+        <h3 class="sa-card__title">Stay Ahead — Premium Guides</h3>
+        <p class="sa-card__text">
+          My personal AI playbooks for content, marketing, and systems I’m actively testing.
+          Updated 2–4x a month.
+        </p>
+
+        <a class="sa-link" href="#subscribe">
+          <span class="sa-link__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M10.5 13.5l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8.2 15.8l-1.4 1.4a4 4 0 01-5.7-5.7l1.4-1.4a4 4 0 015.7 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M15.8 8.2l1.4-1.4a4 4 0 015.7 5.7l-1.4 1.4a4 4 0 01-5.7 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>Join Stay Ahead</span>
+        </a>
+      </article>
+
+      <!-- RIGHT CARD -->
+      <article class="sa-card sa-card--media">
+        <div class="sa-media" aria-hidden="true">
+          <!-- Replace this image with yours -->
+          <img src="/personal brand/images/Naval.png" alt="" loading="lazy" />
+        </div>
+
+        <div class="sa-card__body">
+          <h3 class="sa-card__title">AI Stack — My Creator Workflow</h3>
+          <p class="sa-card__text">
+            The tools + setups I use to research faster, write cleaner, and ship consistently with AI.
+            Templates included.
+          </p>
+
+          <a class="sa-link" href="#book-a-call">
+            <span class="sa-link__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M10.5 13.5l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8.2 15.8l-1.4 1.4a4 4 0 01-5.7-5.7l1.4-1.4a4 4 0 015.7 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M15.8 8.2l1.4-1.4a4 4 0 015.7 5.7l-1.4 1.4a4 4 0 01-5.7 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span>Book a Call</span>
+          </a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- BLOG (one section: header + posts grid) -->
+<section class="blog" id="blog" aria-label="Blog">
+  <div class="container blog__inner">
+    <p class="blog__kicker">T H E&nbsp;&nbsp;B L O G</p>
+    <h2 class="blog__title">Stay Ahead With AI</h2>
+    <p class="blog__subtitle">
+      Practical AI systems, creator workflows, and online business notes—so you ship faster and don’t fall behind.
+    </p>
 
+    <div class="posts">
+      <!-- Post 1 -->
+      <article class="post">
+        <a class="post__media" href="#" aria-label="Open post: Stay Ahead Playbook">
+          <img src="./assets/post-1.jpg" alt="" loading="lazy" />
+        </a>
 
+        <h3 class="post__title">
+          <a class="post__titleLink" href="#">The Stay Ahead Playbook</a>
+        </h3>
 
+        <p class="post__excerpt">
+          A simple system to learn faster, build leverage with AI, and publish consistently without burnout.
+        </p>
 
+        <a class="post__read" href="#">Read Full Post</a>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <img src="/images/real.png" alt="Profile picture of Your Name">
-    <div>
-      <h2>About Me</h2>
-      <p>I’m <strong>Yusuf Admirable Fofana</strong>. I’m not an expert — I’m a student of the internet. My goal is to show you what I’m discovering along the way, so you can pick up skills, spark ideas, and build something of your own.</p>
+        <div class="post__divider"></div>
+
+        <p class="post__meta">
+          <span>yfofana</span><span class="post__dot">•</span>
+          <time datetime="2026-03-02">March 2, 2026</time>
+        </p>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post">
+        <a class="post__media" href="#" aria-label="Open post: AI Systems for Creators">
+          <img src="./assets/post-2.jpg" alt="" loading="lazy" />
+        </a>
+
+        <h3 class="post__title">
+          <a class="post__titleLink" href="#">AI Systems For Creators</a>
+        </h3>
+
+        <p class="post__excerpt">
+          My research → writing → publishing workflow, plus the tools that make it fast and repeatable.
+        </p>
+
+        <a class="post__read" href="#">Read Full Post</a>
+
+        <div class="post__divider"></div>
+
+        <p class="post__meta">
+          <span>yfofana</span><span class="post__dot">•</span>
+          <time datetime="2026-02-18">February 18, 2026</time>
+        </p>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="post">
+        <a class="post__media" href="#" aria-label="Open post: You don’t need a niche">
+          <img src="./assets/post-3.jpg" alt="" loading="lazy" />
+        </a>
+        <h3 class="post__title">
+          <a class="post__titleLink" href="#">You Don’t Need A Niche—You Need A Point Of View</a>
+        </h3>
+
+        <p class="post__excerpt">
+          Your advantage is taste + clarity. Here’s how to turn what you believe into content people trust.
+        </p>
+
+        <a class="post__read" href="#">Read Full Post</a>
+
+        <div class="post__divider"></div>
+
+        <p class="post__meta">
+          <span>yfofana</span><span class="post__dot">•</span>
+          <time datetime="2026-01-31">January 31, 2026</time>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT (Dan Koe-style) -->
+<section class="about" id="about" aria-label="About me">
+  <div class="container about__inner">
+    <p class="about__kicker">A B O U T&nbsp;&nbsp;M E</p>
+
+    <h2 class="about__title">Who Is yfofana?</h2>
+
+    <p class="about__subtitle">A human exploring the inner world.</p>
+
+    <div class="about__grid">
+      <!-- LEFT: photo + socials -->
+      <div class="about__left">
+        <div class="about__photoWrap">
+          <img class="about__photo" src="/personal brand/images/real.png" alt="Portrait of yfofana" />
+        </div>
+
+        <div class="about__social" aria-label="Social links">
+          <a class="about__icon" href="#" aria-label="Instagram" target="_blank" rel="noopener">
+            <!-- Instagram -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <a class="about__icon" href="#" aria-label="X (Twitter)" target="_blank" rel="noopener">
+            <!-- X -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <a class="about__icon" href="#" aria-label="YouTube" target="_blank" rel="noopener">
+            <!-- YouTube -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M21 12s0-3.2-.4-4.6c-.2-.8-.9-1.5-1.7-1.7C17.5 5.3 12 5.3 12 5.3s-5.5 0-6.9.4c-.8.2-1.5.9-1.7 1.7C3 8.8 3 12 3 12s0 3.2.4 4.6c.2.8.9 1.5 1.7 1.7 1.4.4 6.9.4 6.9.4s5.5 0 6.9-.4c.8-.2 1.5-.9 1.7-1.7.4-1.4.4-4.6.4-4.6Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M10.5 9.5l5 2.5-5 2.5v-5Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <a class="about__icon" href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <!-- LinkedIn -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 9v11M4 6.5v.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8.5 20V12.7c0-1.9 1.2-3.2 3-3.2 1.9 0 2.7 1.2 2.7 3.1V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14.2 12.4c.3-1.7 1.6-2.9 3.3-2.9 1.9 0 3.5 1.4 3.5 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: copy -->
+      <div class="about__content">
+        <h3 class="about__hello">Hey, I’m yfofana.</h3>
+
+        <p class="about__text">
+          I help you reconnect with your inner world — the source of creativity, discipline, and clarity.
+        </p>
+
+        <p class="about__text">
+          I explore small habits, mindful rituals, and ideas that turn chaos into alignment.
+        </p>
+
+        <p class="about__emphasis">
+          If you want a life built with purpose and inner peace, you’re home.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section" id="subscribe" aria-label="Newsletter signup">
+    <div class="container section__inner">
+      <h2 class="section__title">Join My Newsletter</h2>
+      <p class="section__text">
+        Drop your email below and you’ll get the next letter (plus 2 per week).
+      </p>
+
+      <form class="form" id="newsletterForm" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <input
+          class="input"
+          id="email"
+          name="email"
+          type="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required
+        />
+        <button class="btn btn--primary" type="submit">Join</button>
+      </form>
+
+      <p class="form__hint" id="formHint" role="status" aria-live="polite"></p>
+
+      <div class="section__divider"></div>
+
+      <div class="letters" id="letters">
+        <h3 class="letters__title">Read The Letters</h3>
+        <p class="letters__text">
+          This section is a placeholder — link it to your Substack, Beehiiv, or blog archive.
+        </p>
+        <a class="link" href="#" id="lettersLink">Go to Letters Archive →</a>
+      </div>
     </div>
   </section>
 
-  <!-- Subscribe -->
-  <section class="subscribe" id="subscribe">
-    <h2>Be Part of the New Rich</h2>
-    <p>Every Saturday, I’ll send you my best ideas about learning digital skills, showing your work online, and creating freedom in the modern world.</p>
-    <form onsubmit="return subscribe(event)">
-      <input type="email" id="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <!-- Footer / Contact -->
-  <footer id="footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <h2>Contact Me</h2>
-        <ul class="social-links">
-          <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-          <li><a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-          <li><a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-          <li><a href="https://web.facebook.com/yusufadmirable.fofana/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-          <li><a href="https://wa.me/YourNumber" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-        </ul>
-      </div>
-      <div class="footer-right">
-        <h2>Send Me a Message</h2>
-        <form action="https://formspree.io/f/mpwjalyj" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Yusuf Admirable Fofana. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> The New Rich</p>
+      <a class="link" href="#top">Back to top ↑</a>
     </div>
   </footer>
 
-  <!-- Floating Socials (Mobile Only) -->
-  <div class="floating-socials">
-    <a href="https://twitter.com/yourusername" target="_blank" class="social-btn"><i class="fab fa-twitter"></i></a>
-    <a href="https://instagram.com/yourusername" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/yusuf-fofana-752330224/" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://web.facebook.com/yusufadmirable.fofana" target="_blank" class="social-btn"><i class="fab fa-facebook"></i></a>
-    <a href="https://web.whatsapp.com/" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-  </div>
-
   <script src="script.js"></script>
 </body>
-<script>
-  // Hamburger toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  hamburger.classList.toggle('active');  // animate hamburger to ✖
-});
-
-// Scroll to subscribe
-function scrollToSubscribe() {
-  document.getElementById("subscribe").scrollIntoView({ behavior: "smooth" });
-}
-
-// Newsletter subscription
-function subscribe(event) {
-  event.preventDefault();
-  const email = document.getElementById("email").value;
-  if(email) {
-    alert(`Thanks for subscribing, ${email}!`);
-    document.getElementById("email").value = "";
-  }
-  return false;
-}
-
-// Footer form submission (Formspree)
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".footer-right form");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      alert("Thanks! I'll get back to you soon.");
-      form.reset();
-    } else {
-      alert("Oops! Something went wrong. Please try again.");
-    }
-  });
-});
-</script>
 </html>
-

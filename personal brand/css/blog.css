@@ -80,3 +80,55 @@ body {background:#000; color:#fff; line-height:1.6; font-size:16px;}
   font-weight: 500;
 }
 
+/* Join The New Creative (mobile-centered like screenshot) */
+.new-creative{
+  border-top: 1px solid var(--line);
+  padding: 72px 0;
+}
+
+.new-creative__inner{
+  /* keeps it “in the middle” on phones */
+  min-height: clamp(360px, 70vh, 680px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.new-creative__kicker{
+  margin: 0 0 14px;
+  font-size: 14px;
+  letter-spacing: .55em;
+  text-indent: .55em; /* keeps centered with wide tracking */
+  color: var(--muted2);
+  text-transform: uppercase;
+}
+
+.new-creative__title{
+  margin: 0 0 14px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  font-size: clamp(44px, 7vw, 88px);
+}
+
+.new-creative__subtitle{
+  margin: 0 0 26px;
+  max-width: 860px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.new-creative__btn{
+  margin-top: 6px;
+}
+
+/* tighter spacing on small phones */
+@media (max-width: 560px){
+  .new-creative{ padding: 56px 0; }
+  .new-creative__title{ font-size: clamp(38px, 10vw, 54px); }
+  .new-creative__subtitle{ font-size: 18px; }
+}
