@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Check your inbox — yfofana</title>
+  <meta name="description" content="Your Top 20 Books list is on the way." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./personal%20brand/css/style.css" />
+</head>
+
+<body>
+  <header class="topbar" aria-label="Site navigation">
+    <div class="container topbar__inner">
+      <a class="brand" href="./index.html" aria-label="Home">
+        <span class="brand__mark brand__mark--word">yfofana</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="./books.html">Read my top 20 books</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="thankyou" aria-label="Thank you page">
+    <div class="container thankyou__inner">
+      <div class="thankyou__card">
+        <div class="thankyou__badge" aria-hidden="true">✓</div>
+
+        <h1 class="thankyou__title">You’re in.</h1>
+
+        <p class="thankyou__text" id="tyNameLine">
+          Your Top 20 Books list is already on the way to your inbox.
+        </p>
+
+        <p class="thankyou__text thankyou__muted">
+          If you don’t see it in 2–3 minutes, check <strong>Promotions</strong> or <strong>Spam</strong> — then move it to Primary so you don’t miss future letters.
+        </p>
+
+        <div class="thankyou__divider"></div>
+
+        <p class="thankyou__text">
+          One small thing: reply to that email with <strong>“got it”</strong> and tell me what you’re working on right now.
+        </p>
+
+        <div class="thankyou__actions">
+          <a class="btn btn--primary" href="./index.html#blog">Explore the blog</a>
+          <a class="btn" href="./index.html#subscribe">Join the newsletter</a>
+        </div>
+
+        <p class="thankyou__signoff">Speak soon, <br><strong>yfofana</strong></p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const name = (params.get("name") || "").trim();
+      const line = document.getElementById("tyNameLine");
+      if (name) line.textContent = `${name}, your Top 20 Books list is already on the way to your inbox.`;
+    })();
+  </script>
+</body>
+</html>

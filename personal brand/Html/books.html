@@ -78,31 +78,50 @@
   </main>
 
   <script>
-    (() => {
-      const form = document.getElementById("booksForm");
-      const hint = document.getElementById("booksHint");
+  (() => {
+    const form = document.getElementById("booksForm");
+    const hint = document.getElementById("booksHint");
+    const btn = form.querySelector('button[type="submit"]');
 
-      const isValidEmail = (email) =>
-        /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/i.test(String(email || "").trim());
+    const isValidEmail = (email) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(String(email || "").trim());
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        hint.textContent = "";
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      hint.textContent = "";
 
-        const data = new FormData(form);
-        const name = (data.get("name") || "").toString().trim();
-        const email = (data.get("email") || "").toString().trim();
-        const consent = document.getElementById("consent").checked;
+      const data = new FormData(form);
+      const name = (data.get("name") || "").toString().trim();
+      const email = (data.get("email") || "").toString().trim();
+      const consent = document.getElementById("consent").checked;
 
-        if (!name) return (hint.textContent = "❗ Please enter your name.");
-        if (!isValidEmail(email)) return (hint.textContent = "❗ Please enter a valid email.");
-        if (!consent) return (hint.textContent = "❗ Please check the consent box.");
+      if (!name) return (hint.textContent = "❗ Please enter your name.");
+      if (!isValidEmail(email)) return (hint.textContent = "❗ Please enter a valid email.");
+      if (!consent) return (hint.textContent = "❗ Please check the consent box.");
 
-        // ✅ Replace this with your real integration (Substack/Beehiiv/Mailchimp/etc.)
-        hint.textContent = "✔️ Sent! Check your inbox in a minute.";
-        form.reset();
-      });
-    })();
-  </script>
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      try {
+        const res = await fetch("/api/send-books", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, consent }),
+        });
+
+        const payload = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(payload?.error || "Failed to send email.");
+
+        // Redirect to branded thank-you page
+        const qs = new URLSearchParams({ name }).toString();
+        window.location.href = `/thank-you.html?${qs}`;
+      } catch (err) {
+        hint.textContent = `❗ ${err.message || "Something went wrong. Please try again."}`;
+        btn.disabled = false;
+        btn.textContent = "Get the FREE Top 20 Books";
+      }
+    });
+  })();
+</script>
 </body>
 </html>

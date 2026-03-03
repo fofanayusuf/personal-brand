@@ -885,3 +885,172 @@ button{ cursor: pointer; }
     line-height: 52px;
   }
 }
+
+/* =========================
+   BOOKS FORM — FIXED (keeps your HTML)
+   ========================= */
+
+/* stop the global .input flex rule from stretching inputs vertically */
+.books-form .input.books-form__input{
+  flex: 0 0 auto;     /* IMPORTANT: no grow in column */
+  min-width: 0;       /* prevent overflow on small screens */
+  height: 54px;       /* consistent height */
+  line-height: normal;
+  width: 100%;
+  padding: 0 16px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  outline: none;
+  font-size: 16px;
+}
+
+/* placeholder + focus */
+.books-form .input.books-form__input::placeholder{
+  color: rgba(244,244,244,.45);
+}
+
+.books-form .input.books-form__input:focus{
+  border-color: rgba(255,255,255,.32);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.06);
+}
+
+/* Chrome autofill fix */
+.books-form .input.books-form__input:-webkit-autofill,
+.books-form .input.books-form__input:-webkit-autofill:hover,
+.books-form .input.books-form__input:-webkit-autofill:focus{
+  -webkit-text-fill-color: var(--text);
+  caret-color: var(--text);
+  box-shadow: 0 0 0 1000px rgba(255,255,255,.06) inset;
+  border: 1px solid rgba(255,255,255,.14);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* form layout */
+.books-form{
+  width: min(520px, 92vw);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* consent row */
+.books-consent{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.4;
+  user-select: none;
+  cursor: pointer;
+}
+
+.books-consent__box{
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent, #19c2c6);
+}
+
+/* button */
+.books-form__btn{
+  width: 100%;
+  padding: 16px 22px;
+  font-size: 16px;
+  border-radius: 999px;
+}
+
+/* hint */
+.books-form__hint{
+  margin: 6px 0 0;
+  min-height: 20px;
+  color: var(--muted);
+}
+
+/* THANK YOU PAGE */
+.thankyou{
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 120px 0 72px;
+}
+
+.thankyou__inner{
+  max-width: 760px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.thankyou__card{
+  width: min(640px, 92vw);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 22px 60px rgba(0,0,0,.45);
+  padding: 26px 22px;
+  text-align: left;
+}
+
+.thankyou__badge{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(25,194,198,.18);
+  color: var(--accent, #19c2c6);
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.thankyou__title{
+  margin: 0 0 10px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-size: clamp(34px, 6vw, 52px);
+  line-height: 1.05;
+}
+
+.thankyou__text{
+  margin: 0 0 14px;
+  color: rgba(255,255,255,.88);
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.thankyou__muted{
+  color: var(--muted);
+}
+
+.thankyou__divider{
+  height: 1px;
+  background: var(--line);
+  margin: 18px 0;
+}
+
+.thankyou__actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.thankyou__signoff{
+  margin: 18px 0 0;
+  color: var(--muted2);
+  line-height: 1.6;
+}
+
+@media (max-width: 560px){
+  .thankyou{ padding: 110px 0 56px; }
+  .thankyou__card{ padding: 22px 18px; }
+  .thankyou__text{ font-size: 17px; }
+}
