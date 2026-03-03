@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="./personal%20brand/css/style.css" />
+  <link rel="stylesheet" href="/personal brand/css/style.css" />
 </head>
 
 <body>
@@ -40,8 +40,23 @@
           Your Top 20 Books list is already on the way to your inbox.
         </p>
 
+        <!-- ✅ Download button + fallback link -->
+        <a
+          class="btn btn--primary"
+          id="downloadBtn"
+          href="/assets/top-20-books.pdf"
+          download="yfofana-top-20-books.pdf"
+        >
+          Download the PDF
+        </a>
+
+        <p class="thankyou__text thankyou__muted" style="margin-top:12px;">
+          If the download didn’t start, tap
+          <a class="link" href="/assets/top-20-books.pdf" download="yfofana-top-20-books.pdf">here</a>.
+        </p>
+
         <p class="thankyou__text thankyou__muted">
-          If you don’t see it in 2–3 minutes, check <strong>Promotions</strong> or <strong>Spam</strong> — then move it to Primary so you don’t miss future letters.
+          If you don’t see the email in 2–3 minutes, check <strong>Promotions</strong> or <strong>Spam</strong> — then move it to Primary so you don’t miss future letters.
         </p>
 
         <div class="thankyou__divider"></div>
@@ -64,8 +79,19 @@
     (() => {
       const params = new URLSearchParams(window.location.search);
       const name = (params.get("name") || "").trim();
+      const dl = params.get("dl") === "1";
+
       const line = document.getElementById("tyNameLine");
-      if (name) line.textContent = `${name}, your Top 20 Books list is already on the way to your inbox.`;
+      const downloadBtn = document.getElementById("downloadBtn");
+
+      if (line && name) {
+        line.textContent = `${name}, your Top 20 Books list is already on the way to your inbox.`;
+      }
+
+      // ✅ Auto-trigger download when arriving from the form redirect
+      if (dl && downloadBtn) {
+        setTimeout(() => downloadBtn.click(), 450);
+      }
     })();
   </script>
 </body>

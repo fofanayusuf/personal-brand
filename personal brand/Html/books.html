@@ -24,7 +24,7 @@
 <body>
   <header class="topbar" aria-label="Site navigation">
     <div class="container topbar__inner">
-      <a class="brand" href="/personal brand/Html/final.html" aria-label="Home">
+      <a class="brand" href="/personal brand/Html/index.html" aria-label="Home">
         <span class="brand__mark brand__mark--word">yfofana</span>
       </a>
 
@@ -103,7 +103,7 @@
       btn.textContent = "Sending...";
 
       try {
-        const res = await fetch("/api/send-books", {
+        const res = await fetch("/.netlify/functions/send-books", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email, consent }),
@@ -112,8 +112,8 @@
         const payload = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(payload?.error || "Failed to send email.");
 
-        // Redirect to branded thank-you page
-        const qs = new URLSearchParams({ name }).toString();
+        // ✅ Keep thank-you page
+        const qs = new URLSearchParams({ name, dl: "1" }).toString();
         window.location.href = `/thank-you.html?${qs}`;
       } catch (err) {
         hint.textContent = `❗ ${err.message || "Something went wrong. Please try again."}`;
@@ -122,6 +122,5 @@
       }
     });
   })();
-</script>
-</body>
+</script></body>
 </html>
