@@ -109,18 +109,23 @@
           body: JSON.stringify({ name, email, consent }),
         });
 
-        const payload = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(payload?.error || "Failed to send email.");
+        const raw = await res.text();
+        let payload = {};
+        try { payload = JSON.parse(raw); } catch {}
 
-        // ✅ Keep thank-you page
+        if (!res.ok) {
+          throw new Error(payload.error || raw || "Failed to send email.");
+        }
+
         const qs = new URLSearchParams({ name, dl: "1" }).toString();
         window.location.href = `/thank-you.html?${qs}`;
       } catch (err) {
-        hint.textContent = `❗ ${err.message || "Something went wrong. Please try again."}`;
+        hint.textContent = `❗ ${err.message}`;
         btn.disabled = false;
         btn.textContent = "Get the FREE Top 20 Books";
       }
     });
   })();
-</script></body>
+</script>
+</body>
 </html>

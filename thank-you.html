@@ -13,6 +13,7 @@
     rel="stylesheet"
   />
 
+  <!-- If you don't have a global stylesheet, use thank-you.css (below). -->
   <link rel="stylesheet" href="/personal brand/css/style.css" />
 </head>
 
@@ -34,43 +35,50 @@
       <div class="thankyou__card">
         <div class="thankyou__badge" aria-hidden="true">✓</div>
 
-        <h1 class="thankyou__title">You’re in.</h1>
+        <h1 class="thankyou__title">You’re home.</h1>
 
         <p class="thankyou__text" id="tyNameLine">
-          Your Top 20 Books list is already on the way to your inbox.
+          Your reading list is on the way — and your download is ready.
         </p>
 
-        <!-- ✅ Download button + fallback link -->
+        <!-- ✅ Download button -->
         <a
           class="btn btn--primary"
           id="downloadBtn"
-          href="/assets/top-20-books.pdf"
+          href="/assets/yfofana-top-20-books.pdf"
           download="yfofana-top-20-books.pdf"
         >
           Download the PDF
         </a>
 
+        <!-- ✅ Fallback link -->
         <p class="thankyou__text thankyou__muted" style="margin-top:12px;">
           If the download didn’t start, tap
-          <a class="link" href="/assets/top-20-books.pdf" download="yfofana-top-20-books.pdf">here</a>.
+          <a class="link" href="/assets/yfofana-top-20-books.pdf" download="yfofana-top-20-books.pdf">here</a>.
         </p>
 
         <p class="thankyou__text thankyou__muted">
-          If you don’t see the email in 2–3 minutes, check <strong>Promotions</strong> or <strong>Spam</strong> — then move it to Primary so you don’t miss future letters.
+          If you don’t see the email in 2–3 minutes, check <strong>Promotions</strong> or <strong>Spam</strong>.
+          Move it to Primary so you don’t miss future letters.
         </p>
 
         <div class="thankyou__divider"></div>
+
+        <p class="thankyou__text">
+          I help you reconnect with your inner world — the source of creativity, discipline, and clarity.
+          If you want a life built with purpose and inner peace, you’re in the right place.
+        </p>
 
         <p class="thankyou__text">
           One small thing: reply to that email with <strong>“got it”</strong> and tell me what you’re working on right now.
         </p>
 
         <div class="thankyou__actions">
-          <a class="btn btn--primary" href="./index.html#blog">Explore the blog</a>
+          <a class="btn btn--primary" href="./index.html#blog">Read the blog</a>
           <a class="btn" href="./index.html#subscribe">Join the newsletter</a>
         </div>
 
-        <p class="thankyou__signoff">Speak soon, <br><strong>yfofana</strong></p>
+        <p class="thankyou__signoff">Speak soon,<br /><strong>yfofana</strong></p>
       </div>
     </div>
   </main>
@@ -85,10 +93,10 @@
       const downloadBtn = document.getElementById("downloadBtn");
 
       if (line && name) {
-        line.textContent = `${name}, your Top 20 Books list is already on the way to your inbox.`;
+        line.textContent = `${name}, your reading list is on the way — and your download is ready.`;
       }
 
-      // ✅ Auto-trigger download when arriving from the form redirect
+      // Auto-download when arriving from form redirect (?dl=1)
       if (dl && downloadBtn) {
         setTimeout(() => downloadBtn.click(), 450);
       }
