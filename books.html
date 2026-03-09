@@ -24,7 +24,7 @@
 <body>
   <header class="topbar" aria-label="Site navigation">
     <div class="container topbar__inner">
-      <a class="brand" href="/personal brand/Html/index.html" aria-label="Home">
+      <a class="brand" href="/index.html" aria-label="Home">
         <span class="brand__mark brand__mark--word">yfofana</span>
       </a>
 
@@ -36,7 +36,6 @@
 
   <main class="books-page" aria-label="Top 20 books">
     <div class="container books-page__inner">
-      <!-- “Photo/cover” recreated to match your brand (no image needed) -->
       <div class="book-cover" aria-hidden="true">
         <div class="book-cover__top">
           <div class="book-cover__eyebrow">YFOFANA</div>
@@ -56,17 +55,47 @@
       <h1 class="books-page__headline">My top 20 books that changed my inner world.</h1>
       <p class="books-page__subhead">Where should I send it?</p>
 
-      <form class="books-form" id="booksForm" novalidate>
+      <form
+        class="books-form"
+        id="booksForm"
+        action="https://formspree.io/f/mpwjalyj"
+        method="POST"
+        novalidate
+      >
         <label class="sr-only" for="name">Name</label>
-        <input class="input books-form__input" id="name" name="name" type="text" placeholder="Your name" required />
+        <input
+          class="input books-form__input"
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Your name"
+          required
+        />
 
         <label class="sr-only" for="email">Email</label>
-        <input class="input books-form__input" id="email" name="email" type="email" placeholder="you@example.com" required />
+        <input
+          class="input books-form__input"
+          id="email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+        />
 
         <label class="books-consent">
-          <input class="books-consent__box" type="checkbox" id="consent" required />
+          <input
+            class="books-consent__box"
+            type="checkbox"
+            id="consent"
+            name="consent"
+            value="yes"
+            required
+          />
           <span>I consent to being added to yfofana’s mailing list</span>
         </label>
+
+        <input type="hidden" name="_subject" value="New Top 20 Books signup" />
+        <input type="hidden" name="_captcha" value="false" />
 
         <button class="btn btn--primary books-form__btn" type="submit">
           Get the FREE Top 20 Books
@@ -78,54 +107,65 @@
   </main>
 
   <script>
-  (() => {
-    const form = document.getElementById("booksForm");
-    const hint = document.getElementById("booksHint");
-    const btn = form.querySelector('button[type="submit"]');
+    (() => {
+      const form = document.getElementById("booksForm");
+      const hint = document.getElementById("booksHint");
+      const btn = form.querySelector('button[type="submit"]');
 
-    const isValidEmail = (email) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(String(email || "").trim());
+      const isValidEmail = (email) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(String(email || "").trim());
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      hint.textContent = "";
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        hint.textContent = "";
 
-      const data = new FormData(form);
-      const name = (data.get("name") || "").toString().trim();
-      const email = (data.get("email") || "").toString().trim();
-      const consent = document.getElementById("consent").checked;
+        const data = new FormData(form);
+        const name = (data.get("name") || "").toString().trim();
+        const email = (data.get("email") || "").toString().trim();
+        const consent = document.getElementById("consent").checked;
 
-      if (!name) return (hint.textContent = "❗ Please enter your name.");
-      if (!isValidEmail(email)) return (hint.textContent = "❗ Please enter a valid email.");
-      if (!consent) return (hint.textContent = "❗ Please check the consent box.");
-
-      btn.disabled = true;
-      btn.textContent = "Sending...";
-
-      try {
-        const res = await fetch("/.netlify/functions/send-books", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, consent }),
-        });
-
-        const raw = await res.text();
-        let payload = {};
-        try { payload = JSON.parse(raw); } catch {}
-
-        if (!res.ok) {
-          throw new Error(payload.error || raw || "Failed to send email.");
+        if (!name) {
+          hint.textContent = "❗ Please enter your name.";
+          return;
         }
 
-        const qs = new URLSearchParams({ name, dl: "1" }).toString();
-        window.location.href = `/thank-you.html?${qs}`;
-      } catch (err) {
-        hint.textContent = `❗ ${err.message}`;
-        btn.disabled = false;
-        btn.textContent = "Get the FREE Top 20 Books";
-      }
-    });
-  })();
-</script>
+        if (!isValidEmail(email)) {
+          hint.textContent = "❗ Please enter a valid email.";
+          return;
+        }
+
+        if (!consent) {
+          hint.textContent = "❗ Please check the consent box.";
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: {
+              Accept: "application/json"
+            }
+          });
+
+          const result = await response.json().catch(() => ({}));
+
+          if (!response.ok) {
+            throw new Error(result.errors?.[0]?.message || "Failed to send form.");
+          }
+
+          const qs = new URLSearchParams({ name, dl: "1" }).toString();
+          window.location.href = `/thank-you.html?${qs}`;
+        } catch (error) {
+          hint.textContent = `❗ ${error.message || "Something went wrong. Please try again."}`;
+          btn.disabled = false;
+          btn.textContent = "Get the FREE Top 20 Books";
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
